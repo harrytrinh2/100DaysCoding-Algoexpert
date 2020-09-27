@@ -36,3 +36,5 @@ class Main {
     return new int[] {};
   }
 }
+
+// output: [-47, 210]
