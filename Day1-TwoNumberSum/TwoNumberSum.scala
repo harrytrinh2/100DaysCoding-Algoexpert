@@ -1,9 +1,10 @@
 import java.util._;
 
 object SumTwoNumbers {
-  def main(args: Array[String]): Unit = {
-    val array = Array(1,5,2,11,-3,1,2,9);
-    println(sumTwoNumbers(array,16).toList)
+  def main(args: Array[String]): Unit = {    
+    val input_array =  Array( -21, 301, 12, 4, 65, 56, 210, 356, 9, -47)
+    println(twoNumberSum(input_array,163).toList)
+
   }
 
 
