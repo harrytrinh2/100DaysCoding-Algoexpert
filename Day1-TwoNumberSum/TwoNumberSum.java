@@ -13,7 +13,7 @@ class Main {
 
   public static int[] twoNumberSum(int[] array, int targetSum) {	
     // Write your code here.
-		Arrays.sort(array);
+    Arrays.sort(array);
     int left;
     left = 0;
     int right ;
