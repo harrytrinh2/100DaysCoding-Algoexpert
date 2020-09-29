@@ -14,13 +14,10 @@ def isValidSubsequence(array, sequence):
 def isValidSubsequence(array, sequence):
     seqIdx = 0
     arrIdx = 0
-
     while arrIdx < len(array) and seqIdx < len(sequence):
-        print(arrIdx,seqIdx)
         if array[arrIdx] == sequence[seqIdx]:
             seqIdx += 1
         arrIdx += 1
-
     return seqIdx == len(sequence)		
 				
 
