@@ -9,7 +9,7 @@ class Main {
 
   }
 
-  public static boolean validateSequence(int[] array, int[] sequence) {	
+  public static boolean validateSequence(int[] array, int[] sequence) {
     // Write your code here.
     int idxArr = 0;
     int idxSeq = 0;

@@ -11,7 +11,7 @@ class Main {
 
   }
 
-  public static int[] twoNumberSum(int[] array, int targetSum) {	
+  public static int[] twoNumberSum(int[] array, int targetSum) {
     // Write your code here.
     Arrays.sort(array);
     int left;
@@ -28,7 +28,7 @@ class Main {
       else if ( currentSum < targetSum){
       left+=1;
       }
-      
+
       else if ( currentSum > targetSum){
       right-=1;
       }
