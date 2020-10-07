@@ -1,17 +1,23 @@
-# O(n) time | O(1) space			
-# --------------------------------------------------------
-def moveElementToEnd(array, toMove):
-	left  = 0
-	right = len(array) - 1 # minus 1 because array starts from 0
-	print("original_array",array)
-	print(right,array[right])
-	while left < right:
-		if array[right] == toMove:
-			right -= 1
-		if array[left] != toMove:
-			left += 1
-		if array[left] == toMove and array[right] != toMove:
-			array[left], array[right] = array[right], array[left]
-	return array
+def isMonotonic(array):
+    # Write your code here.
+	increase,decrease = 1,1
+	for index, i in enumerate(array):
+		if index == 0:
+			continue
+		if index == 1:
+			if i >= array[index-1]:
+				increase+=1
+			elif i <= array[index-1]:
+				decrease+=1
+		if increase>=2:
+			if i >= array[index-1]:
+				increase+=1
+		if decrease>=2:
+			if i <= array[index-1]:
+				decrease+=1
+	if increase == (len(array) +1) or decrease == (len(array) +1):
+		return True
+	else:
+		return False
 
-print(moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2],2))
+print(isMonotonic([-1, -1, -2, -3, -4, -5, -5, -5, -6, -7, -8, -8, -9, -10, -11]))
