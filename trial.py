@@ -1,23 +1,34 @@
-def isMonotonic(array):
-    # Write your code here.
-	increase,decrease = 1,1
-	for index, i in enumerate(array):
-		if index == 0:
-			continue
-		if index == 1:
-			if i >= array[index-1]:
-				increase+=1
-			elif i <= array[index-1]:
-				decrease+=1
-		if increase>=2:
-			if i >= array[index-1]:
-				increase+=1
-		if decrease>=2:
-			if i <= array[index-1]:
-				decrease+=1
-	if increase == (len(array) +1) or decrease == (len(array) +1):
-		return True
-	else:
-		return False
+def spiralMatrix(array):
+	result = []
+	startingRow, startingColumn, endingRow, endingColumn = 0, 0, len(array)-1, len(array[0])-1
 
-print(isMonotonic([-1, -1, -2, -3, -4, -5, -5, -5, -6, -7, -8, -8, -9, -10, -11]))
+	while startingRow <=  endingRow and startingColumn <= endingColumn:
+		
+		for i in range(startingColumn,endingColumn+1):
+			result.append(array[startingRow][i])
+
+		for i in range(startingRow+1,endingRow+1):
+			result.append(array[i][endingColumn])
+
+		for i in range(endingColumn-1,startingColumn-1,-1):
+			if startingRow == endingRow:
+				break
+			result.append(array[endingRow][i])
+
+		for i in range(endingRow-1, startingRow,-1):
+			if startingColumn == endingColumn:
+				break
+			result.append(array[i][startingColumn])
+
+		startingRow+=1
+		startingColumn+=1
+		endingRow-=1
+		endingColumn-=1
+
+	return result
+
+print(spiralMatrix([
+	[1, 2, 3, 4],
+	[12, 13, 14, 5], 
+	[11, 16, 15, 6], 
+	[10, 9, 8, 7]]))
