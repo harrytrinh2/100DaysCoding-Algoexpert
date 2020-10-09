@@ -1,4 +1,4 @@
-def spiralMatrix(array):
+def spiralTraverse(array):
 	result = []
 	startingRow, startingColumn, endingRow, endingColumn = 0, 0, len(array)-1, len(array[0])-1
 
@@ -27,7 +27,7 @@ def spiralMatrix(array):
 
 	return result
 
-print(spiralMatrix([
+print(spiralTraverse([
 	[1, 2, 3, 4],
 	[12, 13, 14, 5], 
 	[11, 16, 15, 6], 
