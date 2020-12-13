@@ -25,3 +25,22 @@ def smallestDifference(arrayOne, arrayTwo):
             if abs(smallest[0] - smallest[1]) > abs(one - two):
                 smallest = [one, two]
     return smallest
+
+
+# O(nlog(n) + mlog(m)) time (because the length of the two arrays are different)| O(1) space 
+def smallestDifference(arrayOne, arrayTwo):
+	arrayOne, arrayTwo = sorted(arrayOne), sorted(arrayTwo)
+    smallest=[float("inf"), float("-inf")]
+	arrOneIdx, arrTwoIdx  = 0 , 0
+	while ((arrOneIdx < len(arrayOne)) and  (arrTwoIdx < len(arrayTwo))):
+		if abs(smallest[0]-smallest[1]) > abs(arrayOne[arrOneIdx] - arrayTwo[arrTwoIdx]):
+			smallest[0] = arrayOne[arrOneIdx]
+			smallest[1] = arrayTwo[arrTwoIdx]
+		if arrayOne[arrOneIdx] < arrayTwo[arrTwoIdx]:
+			arrOneIdx += 1
+		elif arrayOne[arrOneIdx] > arrayTwo[arrTwoIdx]:
+			arrTwoIdx += 1
+		else:
+			break
+	return smallest
+
