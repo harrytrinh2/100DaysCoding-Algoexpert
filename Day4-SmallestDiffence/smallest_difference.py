@@ -44,3 +44,9 @@ def smallestDifference(arrayOne, arrayTwo):
 			break
 	return smallest
 
+#{
+#  "arrayOne": [10, 1000],
+#  "arrayTwo": [-1441, -124, -25, 1014, 1500, 660, 410, 245, 530]
+#}
+
+# [1000, 1014]

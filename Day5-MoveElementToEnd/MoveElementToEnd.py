@@ -24,3 +24,18 @@ def moveElementToEnd(array, toMove):
 			array[left], array[right] = array[right], array[left]
 	return array
 
+
+# O(n) time | O(1) space			
+# --------------------------------------------------------
+def moveElementToEnd(array, toMove):
+    # Write your code here
+	left, right = 0, len(array) -1
+	while left < right:
+		while (left < right) and (array[right] == toMove):
+			right -= 1
+		if array[left] == toMove:
+			temp = array[left]
+			array[left] = array[right]
+			array[right] = temp
+		left +=1
+	return array
