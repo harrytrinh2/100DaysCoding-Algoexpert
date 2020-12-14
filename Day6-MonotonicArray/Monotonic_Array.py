@@ -1,5 +1,19 @@
 # 0(n) time | O(1) space
 def isMonotonic(array):
+    # Write your code here.
+	isNonDecreasing = True
+	isNonIncreasing = True
+    for i in range(0, len(array)-1):
+		if array[i] < array[i+1]:
+			isNonDecreasing = False
+		if array[i] > array[i+1]:
+			isNonIncreasing = False
+	return isNonIncreasing or isNonDecreasing
+# return True or False -> kq la True
+
+
+# 0(n) time | O(1) space
+def isMonotonic(array):
     # Write your code here
 	if len(array) <=2:
 		return True
