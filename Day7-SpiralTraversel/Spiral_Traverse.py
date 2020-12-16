@@ -1,3 +1,4 @@
+## O(N) time complexity | O(N) space complexity
 def spiralTraverse(array): 
     result = []
     startingRow, startingColumn, endingRow, endingColumn = 0, 0, len(array)-1, len(array[0])-1
