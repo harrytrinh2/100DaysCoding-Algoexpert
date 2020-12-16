@@ -1,9 +1,8 @@
-def spiralTraverse(array):
+def spiralTraverse(array): 
     result = []
     startingRow, startingColumn, endingRow, endingColumn = 0, 0, len(array)-1, len(array[0])-1
 
     while startingRow <=  endingRow and startingColumn <= endingColumn:
-        
         for i in range(startingColumn,endingColumn+1):
             result.append(array[startingRow][i])
 
@@ -28,7 +27,10 @@ def spiralTraverse(array):
     return result
 
 print(spiralTraverse([
-    [1, 2, 3, 4],
-    [12, 13, 14, 5], 
-    [11, 16, 15, 6], 
-    [10, 9, 8, 7]]))
+	[7]]))
+
+print(spiralTraverse([
+	[1, 2, 3, 4],
+	[12, 13, 14, 5],
+	[11, 16, 15, 6],
+	[10, 9, 8, 7]]))
