@@ -1,0 +1,14 @@
+        ## O(N) time where N is the total number of elements of the original arrays and its sub-arrays and so on and so forth
+        ## O(D) space where D is the depth of the sub-arrays
+        
+        # Tip: You can use the type(element) function to check whether an item
+        # is a list or an integer.
+        def productSum(array, multiplier = 1):
+            # Write your code here.
+          sum_ = 0
+            for element in array:
+            if type(element) is list:
+              sum_ += productSum(element, multiplier+1)
+            else:
+              sum_ += element 
+          return sum_ * multiplier
