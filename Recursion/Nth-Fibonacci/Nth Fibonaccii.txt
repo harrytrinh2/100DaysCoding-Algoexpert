@@ -1,0 +1,30 @@
+## O(2^n) time | O(N) space
+def getNthFib(n):
+    # Write your code here.
+	if n == 1:
+		return 0
+	elif n == 2:
+		return 1
+	else:
+		return getNthFib(n-1) + getNthFib(n-2)
+
+## O(N) time | O(N) space
+def getNthFib(n, memrize = {1:0, 2:1}):
+    # Write your code here.
+    if n in memrize:
+		return memrize[n]
+	else:
+		memrize[n] = getNthFib(n-1, memrize) + getNthFib(n-2, memrize)
+		return memrize[n]
+
+
+## O(n) time | O(1) space
+def getNthFib(n):
+	next_ = [0, 1]
+	counter = 3
+	while (counter <= n ):
+		sum_ = next_[0] + next_[1]
+		next_[0] = next_[1]
+		next_[1] = sum_
+		cunter += 1
+	return next_[1] if n>=2 else next_[0]
